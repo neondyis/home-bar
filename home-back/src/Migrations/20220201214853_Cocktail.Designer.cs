@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using src;
@@ -11,9 +12,10 @@ using src;
 namespace src.Migrations
 {
     [DbContext(typeof(BarContext))]
-    partial class BarContextModelSnapshot : ModelSnapshot
+    [Migration("20220201214853_Cocktail")]
+    partial class Cocktail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,49 +107,6 @@ namespace src.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Ingredient");
                 });
 
-            modelBuilder.Entity("src.Models.Instruction", b =>
-                {
-                    b.Property<int>("InstructionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("InstructionId"));
-
-                    b.Property<int?>("CocktailId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("InstructionId");
-
-                    b.HasIndex("CocktailId");
-
-                    b.ToTable("Instructions");
-                });
-
-            modelBuilder.Entity("src.Models.InstructionStep", b =>
-                {
-                    b.Property<int>("InstructionStepId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("InstructionStepId"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int?>("InstructionId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Number")
-                        .HasColumnType("integer");
-
-                    b.HasKey("InstructionStepId");
-
-                    b.HasIndex("InstructionId");
-
-                    b.ToTable("InstructionSteps");
-                });
-
             modelBuilder.Entity("src.Models.Measurement", b =>
                 {
                     b.Property<int>("MeasurementId")
@@ -211,7 +170,7 @@ namespace src.Migrations
 
                     b.HasIndex("MeasurementId");
 
-                    b.ToTable("RecipeIngredients");
+                    b.ToTable("RecipeIngredient");
                 });
 
             modelBuilder.Entity("src.Models.Fruit", b =>
@@ -267,20 +226,6 @@ namespace src.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("src.Models.Instruction", b =>
-                {
-                    b.HasOne("src.Models.Cocktail", null)
-                        .WithMany("Instructions")
-                        .HasForeignKey("CocktailId");
-                });
-
-            modelBuilder.Entity("src.Models.InstructionStep", b =>
-                {
-                    b.HasOne("src.Models.Instruction", null)
-                        .WithMany("steps")
-                        .HasForeignKey("InstructionId");
-                });
-
             modelBuilder.Entity("src.Models.Measurement", b =>
                 {
                     b.HasOne("src.Models.MeasurementType", "Type")
@@ -318,13 +263,6 @@ namespace src.Migrations
             modelBuilder.Entity("src.Models.Cocktail", b =>
                 {
                     b.Navigation("Ingredients");
-
-                    b.Navigation("Instructions");
-                });
-
-            modelBuilder.Entity("src.Models.Instruction", b =>
-                {
-                    b.Navigation("steps");
                 });
 #pragma warning restore 612, 618
         }

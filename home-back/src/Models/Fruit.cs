@@ -1,7 +1,6 @@
 namespace src.Models
 {
-    public class Fruit
+    public class Fruit: Ingredient
     {
-
     }
 }

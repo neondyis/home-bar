@@ -1,7 +1,6 @@
 namespace src.Models
 {
-    public class Garnish
+    public class Garnish: Ingredient
     {
-
     }
 }

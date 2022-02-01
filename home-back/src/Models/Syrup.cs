@@ -1,6 +1,6 @@
 namespace src.Models
 {
-    public class Syrup
+    public class Syrup: Ingredient
     {
 
     }

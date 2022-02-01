@@ -1,7 +1,7 @@
 namespace src.Models
 {
-    public class Mixer
+    public class Mixer: Ingredient
     {
-
+        
     }
 }
