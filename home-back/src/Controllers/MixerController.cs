@@ -1,6 +1,10 @@
-﻿namespace src.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
+using src.Models;
 
-public class MixerController
+namespace src.Controllers;
+
+public class MixerController :  BaseController
 {
-    
+    [HttpGet]
+    public List<Mixer> Get() => DbContext.Mixers.ToList();
 }

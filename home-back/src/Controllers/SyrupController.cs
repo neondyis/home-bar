@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class SyrupController
+public class SyrupController :  BaseController
 {
     
 }

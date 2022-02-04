@@ -2,7 +2,7 @@
 
 namespace src.Controllers;
 
-public class BrandController : ControllerBase
+public class BrandController :  BaseController
 {
    
 }

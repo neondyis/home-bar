@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class GarnishController
+public class GarnishController :  BaseController
 {
     
 }

@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class GlassController
+public class GlassController :  BaseController
 {
     
 }

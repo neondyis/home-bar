@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class CocktailController
+public class CocktailController :  BaseController
 {
     
 }

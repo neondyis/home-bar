@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class FruitController
+public class FruitController :  BaseController
 {
     
 }

@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class InstructionController
+public class InstructionController :  BaseController
 {
     
 }

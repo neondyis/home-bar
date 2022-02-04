@@ -1,6 +1,6 @@
 ﻿namespace src.Controllers;
 
-public class LiquerController
+public class LiquerController :  BaseController
 {
     
 }
