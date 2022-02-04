@@ -16,6 +16,7 @@ namespace src
         public DbSet<Mixer> Mixers { get; set; }
         public DbSet<Garnish> Garnishes { get; set; }
         public DbSet<Glass> Glasses { get; set; }
+        public DbSet<Syrup> Syrups { get; set; }
         public DbSet<Measurement> Measurements { get; set; }
         public DbSet<MeasurementType> MeasurementTypes { get; set; }
         public DbSet<Cocktail> Cocktails { get; set; }
