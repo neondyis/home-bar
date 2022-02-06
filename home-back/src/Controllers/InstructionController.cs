@@ -2,9 +2,9 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class InstructionController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class InstructionController : ControllerBase
 {
-    [HttpGet]
-    public List<Instruction> Get() => DbContext.Instructions.ToList();
+    
 }

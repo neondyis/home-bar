@@ -2,9 +2,9 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class SyrupController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class SyrupController : ControllerBase
 {
-    [HttpGet]
-    public List<Syrup> Get() => DbContext.Syrups.ToList();
+    
 }

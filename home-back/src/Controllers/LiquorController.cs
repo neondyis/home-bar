@@ -2,13 +2,11 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class LiquorController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class LiquorController : ControllerBase
 {
-    [HttpGet]
-    public List<Liquor> Get() => DbContext.Liquors.ToList();
-    [HttpPut]
-    public Liquor Put(int id) => DbContext.Liquors.Find(id);
+   
     
     
 }

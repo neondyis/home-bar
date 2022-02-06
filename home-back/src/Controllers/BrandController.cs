@@ -1,10 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using src.Models;
+using src.Repositories.Interfaces;
 
 namespace src.Controllers;
-
-public class BrandController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class BrandController : ControllerBase
 { 
-    [HttpGet]
-    public List<Brand> Get() => DbContext.Brands.ToList();
+    private readonly IBrandRepository _brandRepository;
+    
+    public BrandController(IBrandRepository brandRepository)
+    {
+        _brandRepository = brandRepository;
+    }
+    
+    [HttpGet(Name = "GetBrands")]
+    public IEnumerable<Brand> Get()
+    {
+        return _brandRepository.GetAll();
+    }
 }

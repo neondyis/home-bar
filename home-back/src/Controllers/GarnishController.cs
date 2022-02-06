@@ -2,9 +2,9 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class GarnishController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class GarnishController : ControllerBase
 {
-    [HttpGet]
-    public List<Garnish> Get() => DbContext.Garnishes.ToList();
+    
 }

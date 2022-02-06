@@ -2,9 +2,9 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class GlassController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class GlassController : ControllerBase
 {
-    [HttpGet]
-    public List<Glass> Get() => DbContext.Glasses.ToList();
+    
 }

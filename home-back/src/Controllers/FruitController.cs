@@ -2,9 +2,9 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class FruitController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class FruitController : ControllerBase
 {
-    [HttpGet]
-    public List<Fruit> Get() => DbContext.Fruits.ToList();
+   
 }

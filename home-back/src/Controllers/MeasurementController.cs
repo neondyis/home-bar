@@ -2,9 +2,9 @@
 using src.Models;
 
 namespace src.Controllers;
-
-public class MeasurementController :  BaseController
+[ApiController]
+[Route("[controller]")]
+public class MeasurementController : ControllerBase
 {
-    [HttpGet]
-    public List<Measurement> Get() => DbContext.Measurements.ToList();
+    
 }
