@@ -2,7 +2,7 @@
 
 namespace src.Repositories.Interfaces;
 
-public interface IFruitRepository : IBaseRepository<FruitRepository>
+public interface IFruitRepository : IBaseRepository<Fruit>
 {
     
 }

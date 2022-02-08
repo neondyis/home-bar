@@ -2,7 +2,7 @@
 
 namespace src.Repositories.Interfaces;
 
-public interface IGarnishRepository: IBaseRepository<GarnishRepository>
+public interface IGarnishRepository: IBaseRepository<Garnish>
 {
     
 }

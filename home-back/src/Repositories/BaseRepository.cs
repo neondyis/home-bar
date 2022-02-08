@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using src.Repositories.Interfaces;
 
 namespace src.Repositories;
@@ -13,10 +14,18 @@ public class BaseRepository <T> : IBaseRepository<T> where T : class
         _context = context;
     }
     
-    public void Add(T entity)
+    public async Task Add(T entity)
     {
         _context.Set<T>().Add(entity);
+        await _context.SaveChangesAsync();
     }
+    
+    public async Task Put(T entity)
+    {
+        _context.Entry(entity).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
+    }
+    
     public void AddRange(IEnumerable<T> entities)
     {
         _context.Set<T>().AddRange(entities);
