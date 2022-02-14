@@ -1,3 +1,4 @@
+using HotChocolate.Types;
 using src.Models;
 
 namespace src.GraphQL;
@@ -10,9 +11,9 @@ public class CocktailType : ObjectType<Cocktail>
 
     descriptor
       .Field(f => f.CocktailId)
+      .Name("id")
       .Type<IdType>();
-
-
+    
     descriptor
       .Field(f => f.Name)
       .Type<StringType>();
@@ -20,24 +21,13 @@ public class CocktailType : ObjectType<Cocktail>
     descriptor
       .Field(f => f.Strength)
       .Type<StringType>();
-    
-    
+
+    descriptor
+      .Field(f => f.Ingredients)
+      .Type<ListType<RecipeIngredientType>>();
+
+    descriptor
+      .Field(f => f.Instructions)
+      .Type<ListType<InstructionType>>();
   }
 }
-//
-// Name = nameof(Cocktail);
-// Description = "A cocktail";
-//
-// Field(cocktail => cocktail.CocktailId).Description("ID");
-// Field(cocktail => cocktail.Name).Description("The Name");
-//     
-// Field(
-//   name: "Ingredients",
-//   description: "The ingredients needed for the cocktail",
-//   type: typeof(ListGraphType<RecipeIngredientsType>),
-//   resolve: m => m.Source.Ingredients);
-//
-// Field(
-//   name: "Instructions",
-//   type: typeof(ListGraphType<InstructionType>),
-//   resolve: m=>m.Source.Instructions);

@@ -1,3 +1,5 @@
+using HotChocolate.Types;
+
 namespace src.GraphQL;
 public class QueryType : ObjectType<RootQuery>
 {
