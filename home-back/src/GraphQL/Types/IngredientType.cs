@@ -1,7 +1,8 @@
 using HotChocolate.Types;
+using src.GraphQL.Types;
 using src.Models;
 
-namespace src.GraphQL;
+namespace src.GraphQL.Types;
 
 public class IngredientType : ObjectType<Ingredient>
 {

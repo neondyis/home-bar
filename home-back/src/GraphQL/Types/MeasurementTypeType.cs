@@ -1,7 +1,7 @@
 
 using HotChocolate.Types;
 
-namespace src.GraphQL;
+namespace src.GraphQL.Types;
 
 public class MeasurementTypeType : ObjectType<Models.MeasurementType>
 {

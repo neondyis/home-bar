@@ -1,7 +1,7 @@
 using HotChocolate.Types;
 using src.Models;
 
-namespace src.GraphQL;
+namespace src.GraphQL.Types;
 
 public class InstructionType : ObjectType<Instruction>
 {
