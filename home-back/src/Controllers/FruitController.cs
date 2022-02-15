@@ -14,7 +14,7 @@ public class FruitController : ControllerBase
         _fruitRepository = fruitRepository;
     }
     
-    [HttpGet(Name = "GetFruits")]
+    [HttpGet("/api/[controller]/all",Name = "GetFruits")]
     public IEnumerable<Fruit> GetAll()
     {
         return _fruitRepository.GetAll();

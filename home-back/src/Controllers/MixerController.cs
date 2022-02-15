@@ -14,7 +14,7 @@ public class MixerController : ControllerBase
         _mixerRepository = mixerRepository;
     }
     
-    [HttpGet(Name = "GetMixers")]
+    [HttpGet("/api/[controller]/all",Name = "GetMixers")]
     public IEnumerable<Mixer> GetAll()
     {
         return _mixerRepository.GetAll();

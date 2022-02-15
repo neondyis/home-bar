@@ -14,7 +14,7 @@ public class IngredientController : ControllerBase
         _ingredientRepository = ingredientRepository;
     }
     
-    [HttpGet(Name = "GetIngredients")]
+    [HttpGet("/api/[controller]/all",Name = "GetIngredients")]
     public IEnumerable<Ingredient> GetAll()
     {
         return _ingredientRepository.GetAll();

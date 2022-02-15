@@ -14,7 +14,7 @@ public class InstructionController : ControllerBase
         _instructionRepository = instructionRepository;
     }
     
-    [HttpGet(Name = "GetInstructions")]
+    [HttpGet("/api/[controller]/all",Name = "GetInstructions")]
     public IEnumerable<Instruction> GetAll()
     {
         return _instructionRepository.GetAll();

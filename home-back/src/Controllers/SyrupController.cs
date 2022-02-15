@@ -14,7 +14,7 @@ public class SyrupController : ControllerBase
         _syrupRepository = syrupRepository;
     }
     
-    [HttpGet(Name = "GetSyrups")]
+    [HttpGet("/api/[controller]/all",Name = "GetSyrups")]
     public IEnumerable<Syrup> GetAll()
     {
         return _syrupRepository.GetAll();

@@ -14,7 +14,7 @@ public class GarnishController : ControllerBase
         _garnishRepository = garnishRepository;
     }
     
-    [HttpGet(Name = "GetGarnishes")]
+    [HttpGet("/api/[controller]/all",Name = "GetGarnishes")]
     public IEnumerable<Garnish> GetAll()
     {
         return _garnishRepository.GetAll();

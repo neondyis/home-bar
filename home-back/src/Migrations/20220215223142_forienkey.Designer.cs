@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using src;
@@ -11,9 +12,10 @@ using src;
 namespace src.Migrations
 {
     [DbContext(typeof(BarContext))]
-    partial class BarContextModelSnapshot : ModelSnapshot
+    [Migration("20220215223142_forienkey")]
+    partial class forienkey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -198,7 +200,7 @@ namespace src.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RecipeIngredientId"));
 
-                    b.Property<int>("CocktailId")
+                    b.Property<int?>("CocktailId")
                         .HasColumnType("integer");
 
                     b.Property<int>("IngredientId")
@@ -305,11 +307,9 @@ namespace src.Migrations
 
             modelBuilder.Entity("src.Models.RecipeIngredient", b =>
                 {
-                    b.HasOne("src.Models.Cocktail", "Cocktail")
+                    b.HasOne("src.Models.Cocktail", null)
                         .WithMany("Ingredients")
-                        .HasForeignKey("CocktailId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CocktailId");
 
                     b.HasOne("src.Models.Ingredient", "Ingredient")
                         .WithMany()
@@ -322,8 +322,6 @@ namespace src.Migrations
                         .HasForeignKey("MeasurementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Cocktail");
 
                     b.Navigation("Ingredient");
 

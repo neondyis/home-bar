@@ -14,7 +14,7 @@ public class BrandController : ControllerBase
         _brandRepository = brandRepository;
     }
     
-    [HttpGet(Name = "GetBrands")]
+    [HttpGet("/api/[controller]/all",Name = "GetBrands")]
     public IEnumerable<Brand> GetAll()
     {
         return _brandRepository.GetAll();
@@ -27,12 +27,12 @@ public class BrandController : ControllerBase
     }
     
     [HttpPost(Name = "PostBrand")]
-    public async Task<ActionResult<Brand>> Post(Brand brand)
+    public async Task<ActionResult<Brand>> Post(String brand)
     {
-        await _brandRepository.Add(brand);
+        await _brandRepository.Add(new Brand{BrandName = brand});
 
         //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
-        return CreatedAtAction(nameof(Get), new { id = brand.BrandId }, brand);
+        return NoContent();
     }
     
     [HttpPut("{id}", Name = "PutBrand")]

@@ -14,7 +14,7 @@ public class GlassController : ControllerBase
         _glassRepository = glassRepository;
     }
     
-    [HttpGet(Name = "GetGlasses")]
+    [HttpGet("/api/[controller]/all",Name = "GetGlasses")]
     public IEnumerable<Glass> GetAll()
     {
         return _glassRepository.GetAll();

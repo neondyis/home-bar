@@ -14,7 +14,7 @@ public class LiquorController : ControllerBase
         _liquorRepository = liquorRepository;
     }
     
-    [HttpGet(Name = "GetLiquors")]
+    [HttpGet("/api/[controller]/all",Name = "GetLiquors")]
     public IEnumerable<Liquor> GetAll()
     {
         return _liquorRepository.GetAll();

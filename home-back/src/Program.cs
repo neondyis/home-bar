@@ -32,6 +32,11 @@ services.AddTransient<IMeasurementTypeRepository, MeasurementTypeRepository>();
 services.AddTransient<IMixerRepository, MixerRepository>();
 services.AddTransient<ISyrupRepository, SyrupRepository>();
 
+services.AddSwaggerGen (c =>
+{
+    c.ResolveConflictingActions (apiDescriptions => apiDescriptions.First ());
+});
+
 services
     .AddGraphQLServer()
     .AddQueryType<QueryType>()

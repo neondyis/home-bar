@@ -14,7 +14,7 @@ public class MeasurementController : ControllerBase
         _measurementRepository = measurementRepository;
     }
     
-    [HttpGet(Name = "GetMeasurements")]
+    [HttpGet("/api/[controller]/all",Name = "GetMeasurements")]
     public IEnumerable<Measurement> GetAll()
     {
         return _measurementRepository.GetAll();
