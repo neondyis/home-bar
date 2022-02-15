@@ -1,3 +1,4 @@
+using HotChocolate;
 using src.Models;
 using src.Repositories.Interfaces;
 

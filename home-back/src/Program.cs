@@ -15,7 +15,6 @@ services.AddDbContext<BarContext>(options =>
 services.AddControllers();
 
 // Registering Repositories
-
 services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 services.AddTransient<IBrandRepository, BrandRepository>();
 services.AddTransient<ICocktailRepository, CocktailRepository>();
@@ -33,8 +32,10 @@ services.AddTransient<IMeasurementTypeRepository, MeasurementTypeRepository>();
 services.AddTransient<IMixerRepository, MixerRepository>();
 services.AddTransient<ISyrupRepository, SyrupRepository>();
 
-services.AddGraphQLServer()
-    .AddQueryType<QueryType>();
+services
+    .AddGraphQLServer()
+    .AddQueryType<QueryType>()
+    .AddMutationType<MutationType>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
