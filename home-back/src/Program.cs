@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using src;
-using System.Configuration;
+using src.GraphQL;
 using src.Repositories;
 using src.Repositories.Interfaces;
 
@@ -15,7 +15,6 @@ services.AddDbContext<BarContext>(options =>
 services.AddControllers();
 
 // Registering Repositories
-
 services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 services.AddTransient<IBrandRepository, BrandRepository>();
 services.AddTransient<ICocktailRepository, CocktailRepository>();
@@ -32,6 +31,11 @@ services.AddTransient<IMeasurementRepository, MeasurementRepository>();
 services.AddTransient<IMeasurementTypeRepository, MeasurementTypeRepository>();
 services.AddTransient<IMixerRepository, MixerRepository>();
 services.AddTransient<ISyrupRepository, SyrupRepository>();
+
+services
+    .AddGraphQLServer()
+    .AddQueryType<QueryType>()
+    .AddMutationType<MutationType>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
@@ -51,6 +55,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.MapGraphQL();
 app.MapControllers();
 
 app.Run();
