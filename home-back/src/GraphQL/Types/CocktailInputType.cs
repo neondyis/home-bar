@@ -1,3 +1,4 @@
+using HotChocolate.Types;
 using src.GraphQL.DTOs;
 
 namespace src.GraphQL.Types;
