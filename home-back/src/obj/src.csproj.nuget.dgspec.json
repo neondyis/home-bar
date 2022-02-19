@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "HotChocolate.AspNetCore": {
               "target": "Package",
               "version": "[12.6.0, )"

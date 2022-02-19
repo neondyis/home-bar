@@ -15,7 +15,7 @@ public class MeasurementTypeType : ObjectType<Models.MeasurementType>
       .Type<IdType>();
 
     descriptor
-      .Field(f => f.Type)
+      .Field(f => f.Unit)
       .Type<StringType>();
   }
 }

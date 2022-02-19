@@ -8,7 +8,7 @@ namespace src.Models
         public int CocktailId { get; set; }
         public string Name { get; set; }
         public string Strength { get; set; }
-        public virtual ICollection<RecipeIngredient> Ingredients { get; set; }
-        public virtual ICollection<Instruction> Instructions { get; set; }
+        public virtual List<RecipeIngredient> Ingredients { get; set; }
+        public virtual List<Instruction> Instructions { get; set; }
     }
 }
