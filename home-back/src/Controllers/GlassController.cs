@@ -27,7 +27,7 @@ public class GlassController : ControllerBase
     }
     
     [HttpPost(Name = "PostGlass")]
-    public async Task<ActionResult<Glass>> Post(Glass glass)
+    public async Task<ActionResult<Glass>> Post([FromBody] Glass glass)
     {
         await _glassRepository.Add(glass);
 
@@ -36,7 +36,7 @@ public class GlassController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutGlass")]
-    public async Task<IActionResult> Put(long id, Glass glass)
+    public async Task<IActionResult> Put(long id,[FromBody] Glass glass)
     {
         if (id != glass.GlassId)
         {

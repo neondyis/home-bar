@@ -27,7 +27,7 @@ public class CocktailController : ControllerBase
     }
     
     [HttpPost(Name = "PostCocktail")]
-    public async Task<ActionResult<Cocktail>> Post(Cocktail cocktail)
+    public async Task<ActionResult<Cocktail>> Post([FromBody] Cocktail cocktail)
     {
         await _cocktailRepository.Add(cocktail);
 
@@ -36,7 +36,7 @@ public class CocktailController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutCocktail")]
-    public async Task<IActionResult> Put(long id, Cocktail cocktail)
+    public async Task<IActionResult> Put(long id, [FromBody] Cocktail cocktail)
     {
         if (id != cocktail.CocktailId)
         {

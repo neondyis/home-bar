@@ -27,7 +27,7 @@ public class InstructionController : ControllerBase
     }
     
     [HttpPost(Name = "PostInstruction")]
-    public async Task<ActionResult<Instruction>> Post(Instruction instruction)
+    public async Task<ActionResult<Instruction>> Post([FromBody] Instruction instruction)
     {
         await _instructionRepository.Add(instruction);
 
@@ -36,7 +36,7 @@ public class InstructionController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutInstruction")]
-    public async Task<IActionResult> Put(long id, Instruction instruction)
+    public async Task<IActionResult> Put(long id,[FromBody] Instruction instruction)
     {
         if (id != instruction.InstructionId)
         {

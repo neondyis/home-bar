@@ -8,7 +8,7 @@ namespace src
     {
         public BarContext(DbContextOptions<BarContext> options) : base(options) { }
 
-        public virtual DbSet<Brand> Brands { get; set; }
+        public  DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Liqueur> Liquers { get; set; }
         public virtual DbSet<Liquor> Liquors { get; set; }
         public virtual DbSet<Fruit> Fruits { get; set; }
@@ -263,10 +263,6 @@ namespace src
                     .IsRequired()
                     .HasColumnName("instruction_id");
 
-                entity.HasOne(b => b.Type)
-                    .WithMany(i => i.Measurements)
-                    .HasForeignKey(s => s.MeasurementId)
-                    .OnDelete(DeleteBehavior.Restrict);
             });
             
             modelBuilder.Entity<MeasurementType>(entity =>
@@ -282,6 +278,11 @@ namespace src
                 entity.Property(c => c.Unit)
                     .IsRequired()
                     .HasColumnName("measurement_type_unit");
+                
+                entity.HasMany(b => b.Measurements)
+                    .WithOne(i => i.Type)
+                    .HasForeignKey(s => s.MeasurementTypeId)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
             
             modelBuilder.Entity<RecipeIngredient>(entity =>

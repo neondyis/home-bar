@@ -8,7 +8,7 @@ public class Instruction
     public int InstructionId { get; set; }
     public List<InstructionStep> Steps { get; set; }
     
-    public Cocktail Cocktail { get; set; }
+    public Cocktail? Cocktail { get; set; }
     
     public int CocktailId { get; set; }
 }

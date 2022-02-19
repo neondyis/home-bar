@@ -27,7 +27,7 @@ public class IngredientController : ControllerBase
     }
     
     [HttpPost(Name = "PostIngredient")]
-    public async Task<ActionResult<Ingredient>> Post(Ingredient ingredient)
+    public async Task<ActionResult<Ingredient>> Post([FromBody] Ingredient ingredient)
     {
         await _ingredientRepository.Add(ingredient);
 
@@ -36,7 +36,7 @@ public class IngredientController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutIngredient")]
-    public async Task<IActionResult> Put(long id, Ingredient ingredient)
+    public async Task<IActionResult> Put(long id, [FromBody] Ingredient ingredient)
     {
         if (id != ingredient.IngredientId)
         {

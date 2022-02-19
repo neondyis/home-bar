@@ -6,8 +6,8 @@ public class RecipeIngredient
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int RecipeIngredientId { get; set; }
-    public Ingredient Ingredient { get; set; }
-    public Measurement Measurement { get; set; }
+    public Ingredient? Ingredient { get; set; }
+    public Measurement? Measurement { get; set; }
     
     public int MeasurementId { get; set; }
     
@@ -15,5 +15,5 @@ public class RecipeIngredient
     
     public int CocktailId { get; set; }
 
-    public Cocktail Cocktail { get; set; }
+    public Cocktail? Cocktail { get; set; }
 }

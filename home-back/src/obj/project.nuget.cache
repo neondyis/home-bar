@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2NkNTJghJwMXRTQCfqWSAy2QAq5T7x9t4NTLZh5ugjCZigCV3iNz0CzSkwOd8Fl1w9BpD6hjJPcH7FxnmvvSGQ==",
+  "dgSpecHash": "cELMUGieufzNoRoZTnmKbaeXINHMkYhdv9tUep9xMXoWVQ3/CoGuWo3UBLOurzbNu/Rhk+LPh9Ku7ufSD/Lxgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kylec\\OneDrive\\Desktop\\Projectd\\Personal\\home-back\\src\\src.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,8 @@
     "C:\\Users\\kylec\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.1\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.1.nupkg.sha512",
+    "C:\\Users\\kylec\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.2\\microsoft.aspnetcore.jsonpatch.6.0.2.nupkg.sha512",
+    "C:\\Users\\kylec\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.2\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.2.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\microsoft.build\\17.0.0\\microsoft.build.17.0.0.nupkg.sha512",
@@ -97,6 +99,7 @@
     "C:\\Users\\kylec\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kylec\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.3\\npgsql.entityframeworkcore.postgresql.6.0.3.nupkg.sha512",
     "C:\\Users\\kylec\\.nuget\\packages\\nuget.common\\5.11.0\\nuget.common.5.11.0.nupkg.sha512",

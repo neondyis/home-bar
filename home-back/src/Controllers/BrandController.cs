@@ -27,7 +27,7 @@ public class BrandController : ControllerBase
     }
     
     [HttpPost(Name = "PostBrand")]
-    public async Task<ActionResult<Brand>> Post(String brand)
+    public async Task<ActionResult<Brand>> Post([FromBody] String brand)
     {
         await _brandRepository.Add(new Brand{BrandName = brand});
 

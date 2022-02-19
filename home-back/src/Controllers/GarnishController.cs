@@ -27,7 +27,7 @@ public class GarnishController : ControllerBase
     }
     
     [HttpPost(Name = "PostGarnish")]
-    public async Task<ActionResult<Garnish>> Post(Garnish garnish)
+    public async Task<ActionResult<Garnish>> Post([FromBody] Garnish garnish)
     {
         await _garnishRepository.Add(garnish);
 
@@ -36,7 +36,7 @@ public class GarnishController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutGarnish")]
-    public async Task<IActionResult> Put(long id, Garnish garnish)
+    public async Task<IActionResult> Put(long id, [FromBody] Garnish garnish)
     {
         if (id != garnish.IngredientId)
         {

@@ -27,7 +27,7 @@ public class MixerController : ControllerBase
     }
     
     [HttpPost(Name = "PostMixer")]
-    public async Task<ActionResult<Mixer>> Post(Mixer mixer)
+    public async Task<ActionResult<Mixer>> Post([FromBody] Mixer mixer)
     {
         await _mixerRepository.Add(mixer);
 
@@ -36,7 +36,7 @@ public class MixerController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutMixer")]
-    public async Task<IActionResult> Put(long id, Mixer mixer)
+    public async Task<IActionResult> Put(long id,[FromBody] Mixer mixer)
     {
         if (id != mixer.IngredientId)
         {

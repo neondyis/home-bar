@@ -27,7 +27,7 @@ public class MeasurementController : ControllerBase
     }
     
     [HttpPost(Name = "PostMeasurement")]
-    public async Task<ActionResult<Measurement>> Post(Measurement measurement)
+    public async Task<ActionResult<Measurement>> Post([FromBody] Measurement measurement)
     {
         await _measurementRepository.Add(measurement);
 
@@ -36,7 +36,7 @@ public class MeasurementController : ControllerBase
     }
     
     [HttpPut("{id}", Name = "PutMeasurement")]
-    public async Task<IActionResult> Put(long id, Measurement measurement)
+    public async Task<IActionResult> Put(long id,[FromBody] Measurement measurement)
     {
         if (id != measurement.MeasurementId)
         {
